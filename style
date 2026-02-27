@@ -1,0 +1,94 @@
+/* รีเซ็ตค่าพื้นฐาน */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* พื้นหลังทั้งเว็บ */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6fb;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ส่วนหัว */
+header {
+    background: linear-gradient(135deg, #4facfe, #00c6ff);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+header h1 {
+    margin-bottom: 10px;
+}
+
+/* โปรไฟล์ */
+.profile {
+    text-align: center;
+    margin-top: -50px;
+    margin-bottom: 30px;
+}
+
+.profile img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 5px solid white;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.profile h2 {
+    margin-top: 15px;
+}
+
+/* กล่องเนื้อหา */
+.card {
+    background: white;
+    width: 90%;
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.card h2 {
+    margin-bottom: 15px;
+    color: #0077cc;
+}
+
+.card ul {
+    padding-left: 20px;
+}
+
+.card li {
+    margin-bottom: 8px;
+}
+
+/* footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    background: #e9edf5;
+}
+
+/* Responsive มือถือ */
+@media (max-width: 600px) {
+    header {
+        padding: 30px 10px;
+    }
+
+    .profile img {
+        width: 130px;
+        height: 130px;
+    }
+
+    .card {
+        padding: 18px;
+    }
+}
