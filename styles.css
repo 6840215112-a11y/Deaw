@@ -38,7 +38,14 @@ width:70%;
 border-radius:10px;
 margin-top:20px;
 }
-
+header{
+background-image:url("เขาใหญ่3.jpg");
+background-size:cover;
+background-position:center;
+color:white;
+padding:20px;
+text-align:center;
+}
 .video{
 background:width;
 }
