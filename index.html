@@ -78,17 +78,30 @@ footer{
 
 <h2>สถานที่ท่องเที่ยวเขาใหญ่</h2>
 
-<div class="slider-container">
 
-<button onclick="slide(-1)"></button>
-<div class="slider" id="slide">
-  <img src="ที่เที่ยว1.jpg" onclick="openModal(this.src)">
-  <img src="ที่เที่ยว2.jpg" onclick="openModal(this.src)">
-  <img src="ที่เที่ยว3.jpg" onclick="openModal(this.src)">
-  <img src="ที่เที่ยว4.jpg" onclick="openModal(this.src)">
-  <img src="ที่เที่ยว5.jpg" onclick="openModal(this.src)">
-</div>
-<button onclick="slide(1)"></button>
+Migeul
+<div class="slider-container">
+    <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+
+    <div class="slider" id="mainSlider">
+        <div class="slide active">
+            <img src="ที่เที่ยว1.jpg" onclick="openModal(this.src)">
+        </div>
+        <div class="slide">
+            <img src="ที่เที่ยว2.jpg" onclick="openModal(this.src)">
+        </div>
+        <div class="slide">
+            <img src="ที่เที่ยว3.jpg" onclick="openModal(this.src)">
+        </div>
+        <div class="slide">
+            <img src="ที่เที่ยว4.jpg" onclick="openModal(this.src)">
+        </div>
+        <div class="slide">
+            <img src="ที่เที่ยว5.jpg" onclick="openModal(this.src)">
+        </div>
+    </div>
+
+    <button class="next" onclick="moveSlide(1)">&#10095;</button>
 </div>
 </section>
 
