@@ -59,8 +59,8 @@ scroll-behavior:smooth;
 }
 
 .slider img{
-width:250px;
-height:180px;
+width:150px;
+height:50px;
 object-fit:cover;
 border-radius:10px;
 flex-shrink:0;
