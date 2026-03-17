@@ -6,10 +6,11 @@ count = 1
 count++
 }
 
-Migeul
-function openModal(src){
-document.getElementById("modal").style.display="flex";
-document.getElementById("modalImg").src = src;
+function slide(direction){
+document.getElementById("slide").scrollBy({
+left: direction * 300,
+behavior: 'smooth'
+});
 }
 
 function closeModal(){
