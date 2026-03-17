@@ -84,7 +84,49 @@ height:40px;
 font-size:20px;
 cursor:pointer;
 }
+.slider-container {
+    position: relative;
+    max-width: 800px; 
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 15px;
+}
 
+.slide {
+    display: none; 
+    text-align: center;
+}
+
+.slide img {
+    width: 100%;
+    height: 450px; 
+    object-fit: cover;
+}
+
+.active {
+    display: block;
+    animation: fade 0.5s;
+}
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: white;
+    padding: 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+@keyframes fade {
+    from { opacity: 0.4; }
+    to { opacity: 1; }
+}
 .gallery{
 display:grid;
 grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
