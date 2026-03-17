@@ -99,6 +99,14 @@ footer{
             <img src="ที่เที่ยว5.jpg" onclick="openModal(this.src)">
         </div>
     </div>
+    <div class="slider-container">
+    <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+    
+    <div class="slider" id="mainSlider">
+        </div>
+
+    <button class="next" onclick="moveSlide(1)">&#10095;</button> 
+</div>
 <!-- Modal (รูปใหญ่) -->
 <div id="modal" class="modal" onclick="closeModal()">
   <img id="modalImg">
@@ -111,7 +119,108 @@ footer{
     ให้อยู่ในรูปแบบดิจิทัล เพื่อให้ผู้ใช้งานสามารถเข้าถึงข้อมูลสถานที่ท่องเที่ยว
     ธรรมชาติ และกิจกรรมต่าง ๆ ได้สะดวกมากยิ่งขึ้น
   </p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smooth Slider Example</title>
+    <style>
+        /* CSS สำหรับจัดหน้าตาให้เหมือนตัวอย่าง */
+        body {
+            background-color: #1A2B42; /* สีพื้นหลังตามรูป */
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
 
+        .slider-container {
+            position: relative;
+            width: 80%;
+            height: 400px; /* ปรับขนาดตามต้องการ */
+            overflow: hidden; /* ซ่อนส่วนที่เกิน */
+        }
+
+        /* สำหรับปุ่มซ้าย-ขวา */
+        .btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5); /* พื้นหลังปุ่มโปร่งแสง */
+            color: white;
+            border: none;
+            padding: 15px;
+            cursor: pointer;
+            z-index: 10;
+            border-radius: 50%;
+            font-size: 20px;
+        }
+        .btn-prev { left: 20px; }
+        .btn-next { right: 20px; }
+
+        /* หัวใจหลัก: การจัดเรียงรูปภาพให้ลื่นไหล */
+        .slides {
+            display: flex; /* ใช้ flex เพื่อให้รูปเรียงต่อกัน */
+            width: 100%;
+            height: 100%;
+            /* transition สำคัญมาก: กำหนดให้เคลื่อนที่นุ่มนวล 0.5 วินาที */
+            transition: transform 0.5s ease-in-out; 
+        }
+
+        .slides img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* จัดรูปให้พอดีกรอบ */
+            flex-shrink: 0; /* ป้องกันรูปหด */
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="slider-container">
+    <button class="btn btn-prev" onclick="moveSlide(-1)">&#10094;</button>
+    <button class="btn btn-next" onclick="moveSlide(1)">&#10095;</button>
+
+    <div class="slides">
+        <img src="https://via.placeholder.com/800x400/808080/FFFFFF?text=Slide+1" alt="Slide 1">
+        <img src="https://via.placeholder.com/800x400/A0A0A0/000000?text=Slide+2" alt="Slide 2">
+        <img src="https://via.placeholder.com/800x400/C0C0C0/000000?text=Slide+3" alt="Slide 3">
+    </div>
+</div>
+
+<script>
+    let currentSlide = 0;
+    const slides = document.querySelector('.slides');
+    const totalSlides = document.querySelectorAll('.slides img').length;
+
+    function moveSlide(direction) {
+        currentSlide += direction;
+
+        // วนลูปกลับ
+        if (currentSlide < 0) {
+            currentSlide = totalSlides - 1;
+        } else if (currentSlide >= totalSlides) {
+            currentSlide = 0;
+        }
+
+        updateSlidePosition();
+    }
+
+    function updateSlidePosition() {
+        // คำนวณระยะที่ต้องเลื่อน (ตัวอย่าง: สไลด์ที่ 1 คือ 0%, สไลด์ที่ 2 คือ -100%)
+        const offset = -currentSlide * 100;
+        slides.style.transform = translateX(${offset}%);
+    }
+
+    // เริ่มต้นแสดงรูปแรก
+    updateSlidePosition();
+
+</script>
+
+</body>
+</html>
   <p>
     โดยเน้นการนำเทคโนโลยีมาประยุกต์ใช้ เช่น แผนที่ดิจิทัล ภาพถ่าย และข้อมูลเชิงพื้นที่
     เพื่อส่งเสริมการท่องเที่ยวอย่างยั่งยืน และสร้างประสบการณ์ใหม่ให้กับนักท่องเที่ยว
