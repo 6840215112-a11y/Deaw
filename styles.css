@@ -50,14 +50,29 @@ text-align:center;
 background:width;
 }
 
-.stat{
-background:#eee;
-}
-.gallery{
+.slider{
 display:flex;
-gap:20px;
-justify-content:center;
-flex-wrap:wrap;
+overflow-x:auto;
+gap:15px;
+padding:20px;
+scroll-behavior:smooth;
+}
+
+.slider img{
+width:250px;
+height:180px;
+object-fit:cover;
+border-radius:10px;
+flex-shrink:0;
+transition:0.3s;
+}
+
+.slider img:hover{
+transform:scale(1.1);
+}
+
+.slider::-webkit-scrollbar{
+display:none;
 }
 
 .gallery{
