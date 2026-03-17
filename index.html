@@ -77,7 +77,28 @@ footer{
 <section>
 
 <h2>สถานที่ท่องเที่ยวเขาใหญ่</h2>
+<script>
+    let currentSlide = 0;
 
+    function slide(direction) {
+        const slides = document.querySelectorAll('.สไลด์'); // เปลี่ยนให้ตรงกับ class ใน HTML ของคุณ
+        
+        currentSlide += direction;
+
+        if (currentSlide >= slides.length) { currentSlide = 0; }
+        if (currentSlide < 0) { currentSlide = slides.length - 1; }
+
+        slides.forEach(s => s.style.display = 'none');
+        slides[currentSlide].style.display = 'block';
+    }
+    document.addEventListener("DOMContentLoaded", () => {
+        const slides = document.querySelectorAll('.สไลด์');
+        if(slides.length > 0) {
+            slides.forEach(s => s.style.display = 'none');
+            slides[0].style.display = 'block';
+        }
+    });
+</script>
 <div class="slider-container">
     <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
 
