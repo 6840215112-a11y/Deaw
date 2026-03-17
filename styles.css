@@ -74,6 +74,16 @@ transform:scale(1.1);
 .slider::-webkit-scrollbar{
 display:none;
 }
+.slider-container{
+display:flex;
+align-items:center;
+}
+
+button{
+height:40px;
+font-size:20px;
+cursor:pointer;
+}
 
 .gallery{
 display:grid;
