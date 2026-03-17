@@ -86,7 +86,7 @@ cursor:pointer;
 }
 .slider-container {
     position: relative;
-    max-width: 800px; 
+    max-width: 400px; 
     margin: 20px auto;
     overflow: hidden;
     border-radius: 15px;
@@ -99,7 +99,7 @@ cursor:pointer;
 
 .slide img {
     width: 100%;
-    height: 450px; 
+    height: 250px; 
     object-fit: cover;
 }
 
